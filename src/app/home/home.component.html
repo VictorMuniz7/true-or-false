@@ -1,0 +1,73 @@
+<div class="back">
+  <header class="center">
+    <div class="header-div">
+      <h1 style="color: #63F74C" [classList]="result ? 'animated' : ''">True</h1>
+      <span class="center">Or</span>
+      <h1 style="color: #FC483A" [classList]="result === false ? 'animated' : ''">False</h1>
+    </div>
+
+  </header>
+
+  <div class="container center">
+    <span class="help-icon center" (click)="instructionsOpen = true">?</span>
+
+    <div class="information-div" *ngIf="instructionsOpen">
+      <span (click)="instructionsOpen = false"><i class="fa-solid fa-xmark"></i></span>
+      <h2>Javascript comparison operators</h2>
+      <ul>
+        <li>Equal <strong>( == )</strong> - Returns true if the operands are equal.</li><hr>
+        <li>Strict equal <strong>( === )</strong> - Returns true if the operands are equal and of the same type.</li><hr>
+        <li>Not equal <strong>( != )</strong> - Returns true if the operands are not equal.</li><hr>
+        <li>Strict not equal <strong>( !== )</strong> - Returns true if the operands are of the same type but not equal, or are of different type.</li><hr>
+        <li>Greater than <strong>( > )</strong> - Returns true if the left operand is greater than the right operand.</li><hr>
+        <li>Greater than or equal <strong>( >= )</strong> - Returns true if the left operand is greater than or equal to the right operand.</li><hr>
+        <li>Less than <strong>( < )</strong> - Returns true if the left operand is less than the right operand.</li><hr>
+        <li>Less than or equal <strong>( <= )</strong> - Returns true if the left operand is less than or equal to the right operand.</li>
+      </ul>
+    </div>
+
+    <div class="sub-container">
+      <div class="input-div">
+        <p>First {{icon1.classList.contains('fa-s') ? 'string' : 'number'}}</p>
+        <div class="inside-input">
+          <input [type]="firstInputType" (input)="compare(a.value, b.value, operator.value)" #a>
+          <span class="input-type" (click)="changeFirstType()" (click)="changeIcon(icon1)" (click)="compare(a.value, b.value, operator.value)"><i class="fa-solid fa-s" #icon1></i></span>
+        </div>
+
+      </div>
+
+      <select (change)="compare(a.value, b.value, operator.value)" #operator>
+        <option value="==">==</option>
+        <option value="===">===</option>
+        <option value="!=">!=</option>
+        <option value="!==">!==</option>
+        <option value=">">></option>
+        <option value=">=">>=</option>
+        <option value="<"><</option>
+        <option value="<="><=</option>
+      </select>
+
+      <div class="input-div">
+        <p>Second {{icon2.classList.contains('fa-s') ? 'string' : 'number'}}</p>
+        <div class="inside-input">
+          <input [type]="secondInputType" (input)="compare(a.value, b.value, operator.value)" #b>
+          <span class="input-type" (click)="changeSecondType()" (click)="changeIcon(icon2)" (click)="compare(a.value, b.value, operator.value)"><i class="fa-solid fa-s" #icon2></i></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="result-div center" [style.backgroundColor]="result ? '#63F74C' : result === false ? '#FC483A' : '#fff'">
+    <p>{{result ? result : result === false ? result : 'Result'}}</p>
+  </div>
+
+  <div class="footer center">
+    <div class="links">
+      <a href="https://github.com/VictorMuniz7" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/victor-muniz-236842267/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+
+
