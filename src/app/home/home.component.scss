@@ -28,7 +28,8 @@ header{
     font-size: 2.8em;
     border-radius: 50%;
     cursor: pointer;
-    transition-duration: 1s;
+    transition-duration: 1.5s;
+    text-transform: uppercase;
 
     &:hover{
       transform: rotateY(360deg);
@@ -74,9 +75,9 @@ header{
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 
 .input-div{
@@ -136,7 +137,7 @@ header{
 
 .footer{
   width: 100%;
-  height: 4em;
+  height: 5em;
   background-color: rgba(255, 255, 255, 0.6);
   position: absolute;
   bottom: 0;
@@ -240,11 +241,33 @@ header{
 @media screen and (min-width: 100em){
 
   .header-div{
-    width: 30em;
+    width: 25em;
   }
 
   .container{
-    width: 50%;
+    width: 40%;
+
+    select{
+      margin-bottom: -.25em;
+    }
+  }
+
+  .input-div{
+
+    p{
+      font-size: 1.7em;
+    }
+
+    input{
+      font-size: 1.5em;
+    }
+  }
+
+  .input-type{
+    width: 1.9em;
+    height: 1.9em;
+    right: .12em;
+    top: .135em;
   }
 
   .links{

@@ -31,7 +31,7 @@
         <p>First {{icon1.classList.contains('fa-s') ? 'string' : 'number'}}</p>
         <div class="inside-input">
           <input [type]="firstInputType" (input)="compare(a.value, b.value, operator.value)" #a>
-          <span class="input-type" (click)="changeFirstType()" (click)="changeIcon(icon1)" (click)="compare(a.value, b.value, operator.value)"><i class="fa-solid fa-s" #icon1></i></span>
+          <span class="input-type center" (click)="changeFirstType()" (click)="changeIcon(icon1)" (click)="compare(a.value, b.value, operator.value)"><i class="fa-solid fa-s" #icon1></i></span>
         </div>
 
       </div>
@@ -51,7 +51,7 @@
         <p>Second {{icon2.classList.contains('fa-s') ? 'string' : 'number'}}</p>
         <div class="inside-input">
           <input [type]="secondInputType" (input)="compare(a.value, b.value, operator.value)" #b>
-          <span class="input-type" (click)="changeSecondType()" (click)="changeIcon(icon2)" (click)="compare(a.value, b.value, operator.value)"><i class="fa-solid fa-s" #icon2></i></span>
+          <span class="input-type center" (click)="changeSecondType()" (click)="changeIcon(icon2)" (click)="compare(a.value, b.value, operator.value)"><i class="fa-solid fa-s" #icon2></i></span>
         </div>
       </div>
     </div>
